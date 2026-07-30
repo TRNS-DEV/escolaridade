@@ -1,0 +1,2 @@
+# escolaridade
+TRABALHOS ACADEMICOS DO CURSO 
