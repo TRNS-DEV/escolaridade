@@ -19,92 +19,121 @@
         </label> <br>
         <label for="senha">informe sua senha</label>
 
-        <input type="password" name="senha" id="senha" required>
+        <input type="password" name="senha" id="senha" required maxlength="9">
         <br>
         <label for="email">Informe seu e-mail</label>
 
         <input type="gmail" name="gmail" id="gmail" placeholder="exemplo@suaempresa.com">
         <br>
         <label for="data">informe a data de nascimento</label>
-
         <input type="date" name="data" id="data">
         <br>
-        <input type="submit" value="Enviar" />
-    </form>
-    
-    
-    <table border="4" bgcolor="blue">
-    <form action="cancelamento" method="post">
+        <p>Horario de reunião do time</p>
+        <input type="radio" name="reuniao" id="Manha" value="manha"/> 
+        <label for="Manha">Manha</label> <br>
+        <input type="radio" name="reuniao" id="Tarde" value="tarde"/> 
+        <label for="Tarde">Tarde</label> <br>
+         <input type="radio" name="reuniao" id="Noite" value="noite"/> 
+         <label for="Noite">Noite</label> <br>
+
+         <b>Tipo de reunião</b>
+        <input type="checkbox" name="tipo" id="remoto" value="remoto"/> 
+        <label for="remoto">remoto</label> <br>
+        <input type="checkbox" name="tipo" id="presencial" value="presencial">
+        <label for="presencial">presencial</label> <br>
+        <input type="checkbox" name="tipo" id="hibrida" value="hibrida">
+        <label for="hibrida">hibrida</label> <br>
+
+
+        <b>Selecione seu estado</b>
+        <select name="estado">
+            <option value="PE">Pernambuco</option>
+    <option value="SP">São Paulo</option>
+    <option value="RJ">Rio de Janeiro</option>
+    <option value="AM">Amazonas</option>
         
+        </select>
+    <textarea rows="10" cols="30" maxlength="150">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque et laudantium praesentium voluptas ea quidem voluptatum, ratione accusamus dicta quod libero aspernatur reiciendis veritatis doloremque tenetur delectus incidunt ipsa non.
+    </textarea>
+         <input type="submit" value="Enviar" />
+    </form>
+
+
+    <table border="4" bgcolor="blue">
+        <form action="cancelamento" method="post">
+
             <tr>
                 <th colspan="2">
-                    <h1 >
+                    <h1 color="white">
                         Solicitação de cancelamento
                     </h1>
                 </th>
             </tr>
-            <tr> <td>
-                 <table border="1" bgcolor="white">
+            <tr>
+                <td>
+                    <table border="1" bgcolor="white">
 
-                <tr>
-                    <td>Domino</td>
-                    <th>Seudominio.com</th>
-                </tr>
-                <tr>
-                    <td>Pessoa responsável por esta solicitação:</td>
-                    <td><input type="text" name="responsavel" id="responsavel" required></td>
-                </tr>
-                <tr>
-                    <td>RG número:</td>
-                    <td><input type="number">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Expedido por:</td>
-                    <td> <input type="text"></td>
-                </tr>
-                <tr>
+                        <tr>
+                            <td>Domino</td>
+                            <th>Seudominio.com</th>
+                        </tr>
+                        <tr>
+                            <td>Pessoa responsável por esta solicitação:</td>
+                            <td><input type="text" name="responsavel" id="responsavel" required></td>
+                        </tr>
+                        <tr>
+                            <td>RG número:</td>
+                            <td><input type="number">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Expedido por:</td>
+                            <td> <input type="text"></td>
+                        </tr>
+                        <tr>
 
-                    <td><label for="email">E-mail para contato</label></td>
-                    <td><input type="email" name="email" id="email"></td>
-                </tr>
-                <tr>
-                    </label>
+                            <td><label for="email">E-mail para contato</label></td>
+                            <td><input type="email" name="email" id="email"></td>
+                        </tr>
+                        <tr>
+                            </label>
 
-                    <td>Telefone para contato</td>
-                    <td><input type="tel" name="telefone" id="telefone"></td>
-                </tr>
-                <tr>
-                    <label for="motivo"></label>
-                    <td>Motivo do cancelamento</td>
-                    <td><input type="text" name="motivo" id="motivo"></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td colspan="2">
-                        <input type="submit" value="Enviar Dados">
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
+                            <td>Telefone para contato</td>
+                            <td><input type="tel" name="telefone" id="telefone"></td>
+                        </tr>
+                        <tr>
+                            <label for="motivo"></label>
+                            <td>Motivo do cancelamento</td>
+                            <td><input type="text" name="motivo" id="motivo"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td colspan="2">
+                                <input type="submit" value="Enviar Dados">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
 
 
-    </form>
+        </form>
 
-           </td> </tr>
-           
-</table>
+        </td>
+        </tr>
 
-    
+    </table>
+
+
 
 
 
