@@ -1,0 +1,9 @@
+h1{color: blue;}
+legend{color: blueviolet;}
+p{color: orange;}
+body{
+    
+    background-image: url(fundo.jpg);
+    background-repeat: repeat-x;
+    background-position: center;
+}
