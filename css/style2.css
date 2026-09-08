@@ -1,0 +1,9 @@
+body{
+    background-image:url(astrounauta.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:scroll ;
+}
+a{
+    text-decoration: none;
+}
