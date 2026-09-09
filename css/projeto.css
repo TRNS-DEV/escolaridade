@@ -32,3 +32,15 @@ color: brown;
 legend.pagina{
 color: crimson;
 }
+h2.capt{
+    text-transform: capitalize;
+}
+h2.lowcase{
+text-transform: lowercase;
+}
+h4.uppercase{
+    text-transform: uppercase;
+}
+li.casa{
+    text-indent: 100px;
+}
