@@ -7,3 +7,21 @@ body{
 a{
     text-decoration: none;
 }
+
+
+
+body{
+    font-size:10px;
+    font-family:'Courier New', Courier, monospace
+
+}
+h2.italico{
+    font-style: italic;
+    font-size:xx-large;
+}
+a.menu:hover{
+    color:orange
+}
+    a:visited{
+        color:red;
+    }
