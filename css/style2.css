@@ -34,9 +34,9 @@ ol {
     list-style-type: upper-roman;
     color: blue;
 }
-table{
+table td, th tr{
     border: 1px solid red;
     color: blue;
     border-collapse: collapse;;
-    
+
 }
