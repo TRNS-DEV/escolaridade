@@ -1,27 +1,42 @@
-body{
-    background-image:url(astrounauta.jpg) ;
+body {
+    background-image: url(astrounauta.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment:scroll ;
+    background-attachment: scroll;
 }
-a{
+
+a {
     text-decoration: none;
 }
 
 
 
-body{
-    font-size:10px;
-    font-family:'Courier New', Courier, monospace
+body {
+    font-size: 120%;
+    font-family: 'Courier New', Courier, monospace
+    margin:5px;
+}
 
-}
-h2.italico{
+h2.italico {
     font-style: italic;
-    font-size:xx-large;
+    font-size: xx-large;
 }
-a.menu:hover{
-    color:orange
+
+a.menu:hover {
+    color: orange
 }
-    a:visited{
-        color:red;
-    }
+
+a:visited {
+    color: red;
+}
+
+ol {
+    list-style-type: upper-roman;
+    color: blue;
+}
+table{
+    border: 1px solid red;
+    color: blue;
+    border-collapse: collapse;;
+    
+}
