@@ -1,0 +1,20 @@
+a{
+    color: blue;
+}
+a.virtuais{
+    color: red;
+}
+a.estrategia{
+    color:green;
+}
+#console{
+    color:aqua;
+}
+#insetos{
+    background-color: pink;
+    text-transform: capitalize;
+}
+#repiteis{
+    background-color: yellow;
+    text-transform: capitalize;
+}
