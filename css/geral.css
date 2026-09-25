@@ -1,0 +1,54 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+legend{
+    font-size: 10px;
+}
+p{
+    font-size: 20px;
+}
+
+ol {
+    margin: 50px;
+}
+a{
+    text-decoration: none;
+}
+table{
+    margin: 20px;
+
+}
+#insetos{
+    background-color: pink;
+    text-transform: capitalize;
+    margin: 30px;
+}
+ 
+#repiteis{
+    background-color: yellow;
+    text-transform: capitalize;
+    margin: 30px;
+}
+.jogos{
+    margin: 30px;
+}
+.jogo_estrategia{
+    margin: 30px;
+}
+.bebidas{
+    margin: 30px;
+}
+.consoles{
+    gap:10px;
+    margin: 30px;
+}
+.descricao{
+    margin: 30px;
+    gap:10px
+}
+.bebida{
+    margin: 30px;
+    gap:10px
+}
