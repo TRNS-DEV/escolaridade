@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm</title>
+    <style>
+        /* Estilos para a caixa de alarme personalizada (substituta do alert) */
+        .modal-alarme {
+            display: none; 
+            position: fixed; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%);
+            background-color: #ffdddd; 
+            border: 2px solid #ff4444;
+            padding: 30px; 
+            border-radius: 10px; 
+            text-align: center;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        .modal-alarme button {
+            background-color: #ff4444; 
+            color: white; 
+            border: none;
+            padding: 10px 20px; 
+            font-size: 16px; 
+            cursor: pointer; 
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <a class="btn" href="../../index.html" name="menu"> ☰ Menu</a>
+    
+    <!-- IMPORTANTE: Se o som não tocar, altere o SRC abaixo para o caminho correto -->
+    <audio id="sound" src="/backend/midia/arunangshubanerjee-live-football-match-stadium-crowd-cheering-563439.mp3" preload="auto"></audio>
+    
+    <div class="container">
+        <h2>Minutos:</h2>
+        <select id="minutos" name="minutos"></select>
+        <h2>Segundos:</h2>
+        <select id="segundos" name="segundos"></select>
+        <br><br>
+        <button id="comecar">Começar</button>
+        <div id="display">
+            <h3 id="tempo-texto">00 : 00</h3>
+        </div> 
+    </div> 
+
+    <!-- Caixa de Alarme que vai surgir na tela -->
+    <div id="caixaAlarme" class="modal-alarme">
+        <h2 style="color: #cc0000; margin-top: 0;">⏰ O tempo acabou!</h2>
+        <p>Seu alarme está tocando.</p>
+        <button id="desligar">Desligar Alarme</button>
+    </div>
+
+    <script>
+        var displayTexto = document.getElementById("tempo-texto");
+        var minutos = document.getElementById("minutos");
+        var segundos = document.getElementById("segundos");
+        var comecar = document.getElementById("comecar");
+        var som = document.getElementById("sound");
+        
+        var caixaAlarme = document.getElementById("caixaAlarme");
+        var btnDesligar = document.getElementById("desligar");
+
+        var minutoAtual;
+        var segundoAtual;
+        var interval;
+
+        // Preenche os selects
+        for (var i = 0; i <= 59; i++) {
+            minutos.innerHTML += `<option value="${i}">${i}</option>`; 
+            segundos.innerHTML += `<option value="${i}">${i}</option>`;  
+        }
+
+        comecar.addEventListener("click", function () {
+            minutoAtual = parseInt(minutos.value);
+            segundoAtual = parseInt(segundos.value);
+            
+            if (minutoAtual === 0 && segundoAtual === 0) return;
+
+            // TRUQUE DO AUTOPLAY: Dá um play e pause imediato no clique para destravar o som no navegador
+            som.play().then(() => {
+                som.pause();
+                som.currentTime = 0;
+            }).catch(e => console.log("Áudio aguardando liberação completa do navegador: ", e));
+
+            displayTexto.innerHTML = `${minutoAtual} : ${segundoAtual}`;
+            clearInterval(interval);
+
+            interval = setInterval(function () {
+                if (segundoAtual === 0) {
+                    if (minutoAtual > 0) {
+                        minutoAtual--;
+                        segundoAtual = 59;
+                    } else {
+                        clearInterval(interval);
+                        
+                        // Executa o som continuamente sem o travamento do alert
+                        som.loop = true; 
+                        som.play().catch(err => {
+                            alert("Erro ao reproduzir áudio. Verifique o caminho do arquivo!");
+                            console.error(err);
+                        });
+
+                        // Mostra a caixa de desligar na tela
+                        caixaAlarme.style.display = "block";
+                        return;
+                    }
+                } else {
+                    segundoAtual--;
+                }
+                
+                displayTexto.innerHTML = `${minutoAtual} : ${segundoAtual}`;
+            }, 1000);
+        });
+
+        // Ação do botão de desligar a caixa e o som
+        btnDesligar.addEventListener("click", function() {
+            som.pause();
+            som.currentTime = 0;
+            caixaAlarme.style.display = "none";
+            location.reload();
+        });
+    </script>
+</body>
+</html>
